@@ -166,6 +166,9 @@ class RemunerationController extends Controller
         $exam = Exam::where('id', $request->exam_id)->first();
         $discipline = Descipline::where('id', $request->discipline_id)->first();
         $user = User::where('id', $request->user_id)->first();
+        $categories = RemunerationCategory::orderBy('id', 'DESC')->get();
+
+       
 
         // $data = ([
         //     'rems' => $rems,
@@ -178,9 +181,9 @@ class RemunerationController extends Controller
         
 
 
-        // return view('remuneration.pdf', compact('rems', 'exam', 'discipline', 'user'));
+        // return view('remuneration.pdf', compact('rems', 'exam', 'discipline', 'user', 'categories'));
 
-        $pdf = FacadesPdf::loadView('remuneration.pdf', compact('rems', 'exam', 'discipline', 'user'));
+        $pdf = FacadesPdf::loadView('remuneration.pdf', compact('rems', 'exam', 'discipline', 'user', 'categories'));
         return $pdf->download($user->name . '-' . $exam->year['year'] . ' year -' . $exam->term['term'] . ' term -' . $exam->session['session'] . ' session.pdf');
     }
 }

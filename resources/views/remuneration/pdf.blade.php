@@ -8,12 +8,10 @@
     <style>
         body {
             font-family: 'english', sans-serif;
-            font-size: 15px;
         }
 
         .bangla {
             font-family: "bangla", sans-serif;
-            font-size: 17px;
         }
 
         table {
@@ -22,10 +20,11 @@
         }
 
         table th,
-        td {
-            font-size: 14px;
+        table td {
             padding: 5px;
+            font-size: 14px !important;
         }
+
 
         .table-bordered td {
             border: 1px solid #000;
@@ -36,6 +35,10 @@
         h4 {
             margin: 0;
             margin-bottom: 8px;
+        }
+
+        p{
+            font-size: 16px;
         }
 
 
@@ -56,10 +59,10 @@
     <table>
         <tr>
             <td style="text-align: center;">
-                <p class="bangla">পরীক্ষা নিয়ন্ত্রকের কার্যালয়</p>
-                <h3 class="bangla">খুলনা বিশ্ববিদ্যালয়</h3>
-                <h4 class="bangla">পরীক্ষা পারিতোষিক বিল ফরম</h4>
-                <p class="bangla">(প্রতি বর্ষের প্রতি টার্মের জন্য পৃথক বিল ফরম ব্যবহার করতে হবে)</p>
+                <p class="bangla" style="font-size: 18px;">পরীক্ষা নিয়ন্ত্রকের কার্যালয়</p>
+                <h3 class="bangla" style="font-size: 24px; font-weight: bold;">খুলনা বিশ্ববিদ্যালয়</h3>
+                <h4 class="bangla" style="font-size: 18px;">পরীক্ষা পারিতোষিক বিল ফরম</h4>
+                <p class="bangla" style="font-size: 16px;">(প্রতি বর্ষের প্রতি টার্মের জন্য পৃথক বিল ফরম ব্যবহার করতে হবে)</p>
             </td>
         </tr>
     </table>
@@ -68,38 +71,38 @@
 
         <tr>
             <td style="width: 505;">
-                <p><span class="bangla">নাম</span> : {{ $user->name }}</p>
+                <p><span class="bangla" style="font-size: 20px;">নাম</span> : {{ $user->name }}</p>
             </td>
             <td style="width: 50%;">
-                <p><span class="bangla">যে ডিসিপ্লিনের পরীক্ষা</span> : {{ $discipline->name }}</p>
+                <p><span class="bangla" style="font-size: 20px;">যে ডিসিপ্লিনের পরীক্ষা</span> : {{ $discipline->name }}</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p><span class="bangla">পদবী</span> :
+                <p><span class="bangla" style="font-size: 20px;">পদবী</span> :
                     @if($user->designation)
                     {{ $user->designation['name'] }}
                     @endif
                 </p>
             </td>
             <td>
-                <p><span class="bangla">বর্ষ</span> : {{ $exam->year['year'] }} <span class="bangla">শিক্ষাবর্ষ</span> : {{ $exam->session['session'] }}</p>
+                <p><span class="bangla" style="font-size: 20px;">বর্ষ</span> : {{ $exam->year['year'] }} <span class="bangla" style="font-size: 20px;">শিক্ষাবর্ষ</span> : {{ $exam->session['session'] }}</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p><span class="bangla">ডিসিপ্লিন / বিভাগ</span> : {{ $user->name }}</p>
+                <p><span class="bangla" style="font-size: 20px;">ডিসিপ্লিন / বিভাগ</span> : {{ $user->name }}</p>
             </td>
             <td>
-                <p><span class="bangla">টার্ম</span> : {{ $exam->term['term'] }} / <span class="bangla">স্পেশাল টার্ম / পরীক্ষা</span> - {{ date('Y', strtotime($exam->created_at)) }}</p>
+                <p><span class="bangla" style="font-size: 20px;">টার্ম</span> : {{ $exam->term['term'] }} / <span class="bangla" style="font-size: 20px;">স্পেশাল টার্ম / পরীক্ষা</span> - {{ date('Y', strtotime($exam->created_at)) }}</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p><span class="bangla">ঠিকানা</span> : {{ $user->address }}</p>
+                <p><span class="bangla" style="font-size: 20px;">ঠিকানা</span> : {{ $user->address }}</p>
             </td>
             <td>
-                <p><span class="bangla">পরীক্ষা অনুষ্ঠানের তারিখ</span> : {{ date('d-m-Y', strtotime($exam->start_date)) }} <span class="bangla">থেকে</span> {{ date('d-m-Y', strtotime($exam->end_date)) }} পর্যন্ত</p>
+                <p><span class="bangla" style="font-size: 20px;">পরীক্ষা অনুষ্ঠানের তারিখ</span> : {{ date('d-m-Y', strtotime($exam->start_date)) }} <span class="bangla" style="font-size: 20px;">থেকে</span> {{ date('d-m-Y', strtotime($exam->end_date)) }} পর্যন্ত</p>
             </td>
         </tr>
     </table>
@@ -107,7 +110,7 @@
 
     <table>
         <tr>
-            <td style="text-align: center; text-decoration: underline;"><span class="bangla">পরীক্ষা সংক্রান্ত কাজের বিবরণ</span></td>
+            <td style="text-align: center; text-decoration: underline;"><span class="bangla" style="font-size: 24px;">পরীক্ষা সংক্রান্ত কাজের বিবরণ</span></td>
         </tr>
     </table>
     <br>
@@ -115,39 +118,107 @@
         <thead>
             <tr>
                 <td>#</td>
-                <td><span class="bangla">বিবরণ</span></td>
-                <td><span class="bangla">কোর্স নম্বর</span></td>
-                <td><span class="bangla">প্রশ্ন/খাতা/ কোর্স <br>পরীক্ষক/ দিনের সংখ্যা</span></td>
-                <td><span class="bangla">ছাত্র সংখ্যা</span></td>
-                <td><span class="bangla">অর্ধ/পূর্ণপত্র</span></td>
-                <td><span class="bangla">পারিতোষিক হার</span></td>
-                <td><span class="bangla">মোট টাকা</span></td>
+                <td><span class="bangla" style="font-size: 16px;">বিবরণ</span></td>
+                <td><span class="bangla" style="font-size: 16px;">কোর্স নম্বর</span></td>
+                <td><span class="bangla" style="font-size: 16px;">প্রশ্ন/খাতা/ কোর্স <br>পরীক্ষক/ দিনের সংখ্যা</span></td>
+                <td><span class="bangla" style="font-size: 16px;">ছাত্র সংখ্যা</span></td>
+                <td><span class="bangla" style="font-size: 16px;">অর্ধ/পূর্ণপত্র</span></td>
+                <td><span class="bangla" style="font-size: 16px;">পারিতোষিক হার</span></td>
+                <td><span class="bangla" style="font-size: 16px;">মোট টাকা</span></td>
             </tr>
         </thead>
         <tbody>
             @php
             $grand_total = 0;
             @endphp
-            @foreach($rems as $rem)
+
+            @foreach($categories as $category)
+
+            @php
+            $rems = App\Models\Remuneration::where('exam_id', $exam->id)
+            ->where('discipline_id', $discipline->id)
+            ->where('user_id', $user->id)
+            ->where('category_id', $category->id)
+            ->get()
+            @endphp
             <tr>
                 <td>{{ $loop->index + 1 }}</td>
-                <td>{{ $rem->category['name'] }}</td>
-                <td>{{ $rem->course['course'] }}</td>
-                <td>{{ $rem->number }} ({{ $rem->type['name'] }})</td>
-                <td>{{ $rem->students }}</td>
+                <td>{{ $category->name }}</td>
                 <td>
+                    @if($rems->count() > 1)
+                    {{ $rems->count() }} Courses
+                    @else
+                    @foreach($rems as $rem)
+                    {{ $rem->course['course'] }}
+                    @endforeach
+                    @endif
+                </td>
+                <td>
+                    @php
+                    $number = 0;
+                    if($rems->count() > 0){
+                    foreach($rems as $rem){
+                    $number = $number + $rem->number;
+                    }
+                    }else{
+                    $number = "";
+                    }
+                    @endphp
+
+                    {{ $number }}
+
+                </td>
+                <td>
+                    @php
+                    $students = 0;
+
+                    if($rems->count() > 0){
+                    foreach($rems as $rem){
+                    $students = $students + $rem->students;
+                    }
+                    }else{
+                    $students = "";
+                    }
+
+                    @endphp
+
+                    {{ $students }}
+
+                </td>
+                <td>
+                    @if($rems->count() == 1)
+                    @foreach($rems as $rem)
                     @if($rem->paper == 'half')
                     <span class="bangla">অর্ধপত্র</span>
                     @else
                     <span class="bangla">পূর্ণপত্র</span>
                     @endif
-                </td>
-                <td>
-                    {{ $rem->rate['amount'] }}
+                    @endforeach
+                    @endif
                 </td>
                 <td>
 
+
                     @php
+                    $rate = App\Models\Remuneration::where('exam_id', $exam->id)
+                    ->where('discipline_id', $discipline->id)
+                    ->where('user_id', $user->id)
+                    ->first();
+                    @endphp
+
+                    @if($rems->count() > 0)
+                    {{ $rate->rate['amount'] }}
+                    @endif
+
+
+
+                </td>
+                <td>
+                    @php
+                    $sum = 0;
+
+                    if($rems->count() > 0){
+                    foreach($rems as $rem){
                     if($rem->paper == 'half'){
                     $amount = $rem->rate['amount'] / 2;
                     }else{
@@ -164,10 +235,17 @@
 
                     $grand_total = $grand_total + $total;
 
+                    $sum = $sum + $total;
+
+                    }
+                    }else{
+                    $sum = "";
+                    }
+
+
                     @endphp
+                    {{ $sum }}
 
-
-                    {{ $total }}
 
                 </td>
 
@@ -176,14 +254,14 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="7" style="text-align: end;"><span class="bangla">সর্বমোট টাকার পরিমাণ</span></td>
+                <td colspan="7" style="text-align: end;"><span class="bangla" style="font-size: 16px;">সর্বমোট টাকার পরিমাণ</span></td>
                 <td>{{ $grand_total }}</td>
             </tr>
             <tr>
                 @php
                 $text = new Rakibhstu\Banglanumber\NumberToBangla();
                 @endphp
-                <td colspan="8"><span class="bangla">সর্বমোট টাকার পরিমাণ (কথায়) : {{ $text->bnMoney($grand_total) }} </span></td>
+                <td colspan="8"><span class="bangla" style="font-size: 16px;">সর্বমোট টাকার পরিমাণ (কথায়) : {{ $text->bnMoney($grand_total) }} </span></td>
             </tr>
         </tfoot>
     </table>
